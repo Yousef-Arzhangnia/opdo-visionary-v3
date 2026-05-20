@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import logo from "@/assets/opdo-logo.png";
 
 const nav = [
   { to: "/ai-agents", label: "AI agents" },
@@ -17,15 +18,9 @@ export function SiteHeader({ variant = "light" }: { variant?: "light" | "dark" }
       }
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 md:px-10">
-        <Link to="/" className="flex items-center gap-2 font-display text-xl font-semibold tracking-tight">
-          <span
-            className={
-              "inline-block h-2.5 w-2.5 rounded-full " +
-              (isDark ? "bg-ink-foreground" : "bg-foreground")
-            }
-            aria-hidden
-          />
-          Opdo
+        <Link to="/" className="flex items-center gap-3 font-display text-xl font-semibold tracking-tight">
+          <img src={logo} alt="Opdo" width={32} height={32} className="h-8 w-8" />
+          <span className="sr-only">Opdo</span>
         </Link>
         <nav className="hidden items-center gap-8 text-sm md:flex">
           {nav.map((item) => (
