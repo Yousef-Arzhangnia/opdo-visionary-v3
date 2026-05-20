@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
-import { HeroWaves } from "@/components/hero-waves";
+import heroWaves from "@/assets/hero-waves.jpg";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 
@@ -30,8 +30,15 @@ function Index() {
       <section className="relative isolate min-h-screen overflow-hidden bg-ink text-ink-foreground">
         <SiteHeader variant="dark" />
 
-        {/* Full-screen animated wave structure */}
-        <HeroWaves />
+        {/* Full-screen wave structure */}
+        <img
+          src={heroWaves}
+          alt=""
+          aria-hidden
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-90"
+          width={1920}
+          height={1080}
+        />
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(0,0,0,0.65)_0%,rgba(0,0,0,0.2)_45%,rgba(0,0,0,0.85)_100%)]"
