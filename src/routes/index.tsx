@@ -58,8 +58,7 @@ function Index() {
               optics.
             </h1>
             <p className="mt-8 max-w-xl text-base leading-relaxed text-ink-foreground/70 md:text-lg">
-              We design lenses, mirrors and freeform optics with autonomous agents.
-              Sub-micron tolerances, days not months.
+              Verify your optical design in days.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <Link
