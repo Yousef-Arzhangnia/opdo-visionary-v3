@@ -66,7 +66,7 @@ function Index() {
                 to="/capabilities"
                 className="rounded-full bg-ink-foreground px-6 py-3 text-sm font-medium text-ink transition-transform hover:-translate-y-0.5"
               >
-                Explore capabilities
+                Order Prototype
               </Link>
               <Link
                 to="/ai-agents"
