@@ -9,13 +9,25 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as InsightsRouteImport } from './routes/insights'
 import { Route as FastPartsRouteImport } from './routes/fast-parts'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AiAgentsRouteImport } from './routes/ai-agents'
 import { Route as IndexRouteImport } from './routes/index'
 
+const InsightsRoute = InsightsRouteImport.update({
+  id: '/insights',
+  path: '/insights',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FastPartsRoute = FastPartsRouteImport.update({
   id: '/fast-parts',
   path: '/fast-parts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AiAgentsRoute = AiAgentsRouteImport.update({
@@ -32,40 +44,62 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/ai-agents': typeof AiAgentsRoute
+  '/contact': typeof ContactRoute
   '/fast-parts': typeof FastPartsRoute
+  '/insights': typeof InsightsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/ai-agents': typeof AiAgentsRoute
+  '/contact': typeof ContactRoute
   '/fast-parts': typeof FastPartsRoute
+  '/insights': typeof InsightsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/ai-agents': typeof AiAgentsRoute
+  '/contact': typeof ContactRoute
   '/fast-parts': typeof FastPartsRoute
+  '/insights': typeof InsightsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/ai-agents' | '/fast-parts'
+  fullPaths: '/' | '/ai-agents' | '/contact' | '/fast-parts' | '/insights'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/ai-agents' | '/fast-parts'
-  id: '__root__' | '/' | '/ai-agents' | '/fast-parts'
+  to: '/' | '/ai-agents' | '/contact' | '/fast-parts' | '/insights'
+  id: '__root__' | '/' | '/ai-agents' | '/contact' | '/fast-parts' | '/insights'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AiAgentsRoute: typeof AiAgentsRoute
+  ContactRoute: typeof ContactRoute
   FastPartsRoute: typeof FastPartsRoute
+  InsightsRoute: typeof InsightsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/insights': {
+      id: '/insights'
+      path: '/insights'
+      fullPath: '/insights'
+      preLoaderRoute: typeof InsightsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/fast-parts': {
       id: '/fast-parts'
       path: '/fast-parts'
       fullPath: '/fast-parts'
       preLoaderRoute: typeof FastPartsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/ai-agents': {
@@ -88,8 +122,20 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AiAgentsRoute: AiAgentsRoute,
+  ContactRoute: ContactRoute,
   FastPartsRoute: FastPartsRoute,
+  InsightsRoute: InsightsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
