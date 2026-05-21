@@ -58,18 +58,18 @@ function FreeformOptic() {
       <MeshTransmissionMaterial
         ref={matRef}
         background={bgTexture}
-        transmission={0.9}
-        thickness={0.9}
+        transmission={1}
+        thickness={0.35}
         roughness={0.0}
         ior={1.45}
-        chromaticAberration={0.03}
+        chromaticAberration={0.04}
         anisotropy={0.02}
-        distortion={0.12}
-        distortionScale={0.2}
-        temporalDistortion={0.015}
+        distortion={0.08}
+        distortionScale={0.15}
+        temporalDistortion={0.01}
         clearcoat={0.0}
         clearcoatRoughness={0}
-        attenuationDistance={1}
+        attenuationDistance={5}
         attenuationColor="#ffffff"
         color="#ffffff"
         backside
