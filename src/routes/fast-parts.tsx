@@ -1,12 +1,21 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/page-shell";
 
 export const Route = createFileRoute("/fast-parts")({
   component: FastParts,
   head: () => ({
     meta: [
-      { title: "Fast parts — Opdo" },
-      { name: "description", content: "Prototype-to-precision optical parts shipped in days." },
+      { title: "Fast Parts — Opdo" },
+      {
+        name: "description",
+        content:
+          "Verified, manufacturing-ready optical designs go straight to fast prototyping — real parts, fast.",
+      },
+      { property: "og:title", content: "Fast Parts — Opdo" },
+      {
+        property: "og:description",
+        content: "From verified design to real part — fast.",
+      },
     ],
   }),
 });
@@ -14,35 +23,53 @@ export const Route = createFileRoute("/fast-parts")({
 function FastParts() {
   return (
     <PageShell
-      eyebrow="Prototype to production"
-      title="Parts in days, not quarters."
-      intro="A validated network of precision shops, automated quoting, and AI-generated travelers — your optics arrive measured, certified and ready."
+      eyebrow="Fast Parts"
+      title="From verified design to real part — fast"
+      intro="Digital verification tells you a design should work. Physical verification proves it. Once your design is verified and optimized in Opdo's agent space, it goes straight to prototyping as a real optical component."
     >
-      <div className="overflow-hidden rounded-2xl border border-border">
-        <table className="w-full text-left text-sm">
-          <thead className="bg-secondary text-xs uppercase tracking-wider text-muted-foreground">
-            <tr>
-              <th className="px-6 py-4">Part class</th>
-              <th className="px-6 py-4">Typical tolerance</th>
-              <th className="px-6 py-4">Lead time</th>
-            </tr>
-          </thead>
-          <tbody>
-            {[
-              ["Spherical lens", "λ/10 PV", "5 days"],
-              ["Asphere", "λ/4 PV", "10 days"],
-              ["Freeform mirror", "200 nm RMS", "14 days"],
-              ["Prism / wedge", "10 arcsec", "7 days"],
-            ].map((r) => (
-              <tr key={r[0]} className="border-t border-border">
-                {r.map((c, i) => (
-                  <td key={i} className="px-6 py-4">{c}</td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      <section className="mt-8">
+        <h2 className="font-display text-3xl font-semibold md:text-5xl">Why it's fast</h2>
+        <p className="mt-6 max-w-3xl text-lg leading-relaxed text-foreground/80">
+          The design arrives already verified and manufacturing-ready. There is no quoting
+          back-and-forth and no late-stage redesign — prototyping starts immediately.
+        </p>
+        <p className="mt-4 max-w-3xl text-sm italic text-muted-foreground">
+          [Prototype turnaround: prototypes in [X] weeks, not months.]
+        </p>
+      </section>
+
+      <section className="mt-24">
+        <h2 className="font-display text-3xl font-semibold md:text-5xl">The verification loop, closed</h2>
+        <p className="mt-6 max-w-3xl text-lg leading-relaxed text-foreground/80">
+          Verify in software. Confirm in hardware. Iterate. Because each loop is fast, you run
+          more of them — and more iterations means a better optical part.
+        </p>
+      </section>
+
+      <section className="mt-24">
+        <h2 className="font-display text-3xl font-semibold md:text-5xl">Production specifications</h2>
+        <div className="mt-8 rounded-2xl border border-dashed border-border bg-card p-10 text-sm text-muted-foreground">
+          [Insert production specs — part classes, tolerances, lead times, materials.]
+        </div>
+      </section>
+
+      <section className="mt-24">
+        <h2 className="font-display text-3xl font-semibold md:text-5xl">Bring us a verified design</h2>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <Link
+            to="/contact"
+            className="inline-block rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition-transform hover:-translate-y-0.5"
+          >
+            Order a prototype
+          </Link>
+          <Link
+            to="/contact"
+            className="inline-block rounded-full border border-foreground/30 px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-foreground/5"
+          >
+            Contact us
+          </Link>
+        </div>
+      </section>
     </PageShell>
   );
 }

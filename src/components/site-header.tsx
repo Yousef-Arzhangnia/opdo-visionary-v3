@@ -3,10 +3,9 @@ import { Link } from "@tanstack/react-router";
 import logo from "@/assets/opdo-logo.png";
 
 const nav = [
-  { to: "/ai-agents", label: "AI agents" },
-  { to: "/fast-parts", label: "Fast parts" },
-  { to: "/capabilities", label: "Capabilities" },
-  { to: "/knowledge", label: "Knowledge" },
+  { to: "/ai-agents", label: "AI Agents" },
+  { to: "/fast-parts", label: "Fast Parts" },
+  { to: "/insights", label: "Insights" },
 ] as const;
 
 export function SiteHeader({ variant = "light" }: { variant?: "light" | "dark" }) {
@@ -63,7 +62,7 @@ export function SiteHeader({ variant = "light" }: { variant?: "light" | "dark" }
           ))}
         </nav>
         <Link
-          to="/capabilities"
+          to="/contact"
           className={
             "hidden rounded-full border px-4 py-2 text-sm transition-colors md:inline-block " +
             (isDark
@@ -71,7 +70,7 @@ export function SiteHeader({ variant = "light" }: { variant?: "light" | "dark" }
               : "border-foreground/40 hover:bg-foreground hover:text-background")
           }
         >
-          Contact
+          Contact us
         </Link>
       </div>
     </header>
