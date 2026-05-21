@@ -13,10 +13,10 @@ export function SiteFooter() {
           Precision optics, designed by AI. © {new Date().getFullYear()} Opdo.
         </p>
         <div className="flex gap-6 text-sm text-muted-foreground">
-          <Link to="/ai-agents">AI agents</Link>
-          <Link to="/fast-parts">Fast parts</Link>
-          <Link to="/capabilities">Capabilities</Link>
-          <Link to="/knowledge">Knowledge</Link>
+          <Link to="/ai-agents">AI Agents</Link>
+          <Link to="/fast-parts">Fast Parts</Link>
+          <Link to="/insights">Insights</Link>
+          <Link to="/contact">Contact us</Link>
         </div>
       </div>
     </footer>

@@ -9,25 +9,13 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as KnowledgeRouteImport } from './routes/knowledge'
 import { Route as FastPartsRouteImport } from './routes/fast-parts'
-import { Route as CapabilitiesRouteImport } from './routes/capabilities'
 import { Route as AiAgentsRouteImport } from './routes/ai-agents'
 import { Route as IndexRouteImport } from './routes/index'
 
-const KnowledgeRoute = KnowledgeRouteImport.update({
-  id: '/knowledge',
-  path: '/knowledge',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const FastPartsRoute = FastPartsRouteImport.update({
   id: '/fast-parts',
   path: '/fast-parts',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CapabilitiesRoute = CapabilitiesRouteImport.update({
-  id: '/capabilities',
-  path: '/capabilities',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AiAgentsRoute = AiAgentsRouteImport.update({
@@ -44,68 +32,40 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/ai-agents': typeof AiAgentsRoute
-  '/capabilities': typeof CapabilitiesRoute
   '/fast-parts': typeof FastPartsRoute
-  '/knowledge': typeof KnowledgeRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/ai-agents': typeof AiAgentsRoute
-  '/capabilities': typeof CapabilitiesRoute
   '/fast-parts': typeof FastPartsRoute
-  '/knowledge': typeof KnowledgeRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/ai-agents': typeof AiAgentsRoute
-  '/capabilities': typeof CapabilitiesRoute
   '/fast-parts': typeof FastPartsRoute
-  '/knowledge': typeof KnowledgeRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/ai-agents' | '/capabilities' | '/fast-parts' | '/knowledge'
+  fullPaths: '/' | '/ai-agents' | '/fast-parts'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/ai-agents' | '/capabilities' | '/fast-parts' | '/knowledge'
-  id:
-    | '__root__'
-    | '/'
-    | '/ai-agents'
-    | '/capabilities'
-    | '/fast-parts'
-    | '/knowledge'
+  to: '/' | '/ai-agents' | '/fast-parts'
+  id: '__root__' | '/' | '/ai-agents' | '/fast-parts'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AiAgentsRoute: typeof AiAgentsRoute
-  CapabilitiesRoute: typeof CapabilitiesRoute
   FastPartsRoute: typeof FastPartsRoute
-  KnowledgeRoute: typeof KnowledgeRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/knowledge': {
-      id: '/knowledge'
-      path: '/knowledge'
-      fullPath: '/knowledge'
-      preLoaderRoute: typeof KnowledgeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/fast-parts': {
       id: '/fast-parts'
       path: '/fast-parts'
       fullPath: '/fast-parts'
       preLoaderRoute: typeof FastPartsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/capabilities': {
-      id: '/capabilities'
-      path: '/capabilities'
-      fullPath: '/capabilities'
-      preLoaderRoute: typeof CapabilitiesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/ai-agents': {
@@ -128,9 +88,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AiAgentsRoute: AiAgentsRoute,
-  CapabilitiesRoute: CapabilitiesRoute,
   FastPartsRoute: FastPartsRoute,
-  KnowledgeRoute: KnowledgeRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
