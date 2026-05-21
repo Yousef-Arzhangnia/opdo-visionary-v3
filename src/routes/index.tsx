@@ -91,9 +91,9 @@ function Index() {
             Optics is the bottleneck
           </h2>
           <p className="mt-8 text-lg leading-relaxed text-foreground/80">
-            Photonics powers mission-critical systems — sensing, communication, defense, space.
+            Photonics powers mission-critical systems: sensing, communication, defense, space.
             But optical components are almost always custom, and verifying them is slow. Most
-            problems surface late, at the fab, after weeks of lead time. A single re-spin can
+            problems surface late, at the fab, after months of lead time. A single re-spin can
             cost a program weeks.
           </p>
         </div>
