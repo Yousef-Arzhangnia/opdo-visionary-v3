@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import heroWaves from "@/assets/hero-waves.jpg";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { HeroOptic } from "@/components/hero-optic";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -39,6 +40,7 @@ function Index() {
           width={1920}
           height={1080}
         />
+        <HeroOptic />
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(0,0,0,0.65)_0%,rgba(0,0,0,0.2)_45%,rgba(0,0,0,0.85)_100%)]"
