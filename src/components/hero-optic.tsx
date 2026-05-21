@@ -1,5 +1,5 @@
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import { MeshTransmissionMaterial } from "@react-three/drei";
+import { Environment, MeshTransmissionMaterial } from "@react-three/drei";
 import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
 import heroWaves from "@/assets/hero-waves.jpg";
@@ -61,13 +61,14 @@ function FreeformOptic() {
         transmission={1}
         thickness={0.35}
         roughness={0.0}
-        ior={1.45}
+        ior={1.5}
+        reflectivity={1}
         chromaticAberration={0.04}
         anisotropy={0.02}
         distortion={0.08}
         distortionScale={0.15}
         temporalDistortion={0.01}
-        clearcoat={0.0}
+        clearcoat={1}
         clearcoatRoughness={0}
         attenuationDistance={5}
         attenuationColor="#ffffff"
@@ -94,8 +95,10 @@ export function HeroOptic() {
       >
         <Suspense fallback={null}>
           <ambientLight intensity={0.4} />
-          <directionalLight position={[4.5, 3.2, 4]} intensity={1.4} color="#ffffff" />
-          <directionalLight position={[-3, -2, 2]} intensity={0.5} color="#ffffff" />
+          <directionalLight position={[4.5, 3.2, 4]} intensity={2.2} color="#ffffff" />
+          <directionalLight position={[-3, -2, 2]} intensity={1.2} color="#ffffff" />
+          <directionalLight position={[0, 4, -2]} intensity={1.5} color="#bcd4ff" />
+          <Environment preset="studio" environmentIntensity={1.2} />
           <FreeformOptic />
         </Suspense>
       </Canvas>
