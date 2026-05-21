@@ -48,10 +48,6 @@ function Index() {
 
         <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-6 pb-24 pt-40 md:px-10">
           <div className="max-w-3xl">
-            <p className="mb-6 inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-ink-foreground/60">
-              <span className="h-px w-8 bg-ink-foreground/60" />
-              Precision optics · est. 2026
-            </p>
             <h1 className="font-display text-[clamp(3rem,8vw,7.5rem)] font-semibold leading-[0.95] tracking-[-0.04em]">
               Opdo
               <br />
@@ -81,9 +77,16 @@ function Index() {
 
         {/* footer bar of hero */}
         <div className="absolute inset-x-0 bottom-0 z-10 border-t border-ink-foreground/10">
-          <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 text-xs uppercase tracking-[0.2em] text-ink-foreground/50 md:px-10">
-            <span>Wavefront · diffraction · freeform</span>
-            <span className="hidden md:inline">Scroll ↓</span>
+          <div className="mx-auto flex max-w-7xl items-center justify-center px-6 py-4 md:px-10">
+            <button
+              type="button"
+              onClick={() =>
+                window.scrollTo({ top: window.innerHeight, behavior: "smooth" })
+              }
+              className="text-xs uppercase tracking-[0.2em] text-ink-foreground/60 transition-colors hover:text-ink-foreground"
+            >
+              Scroll ↓
+            </button>
           </div>
         </div>
       </section>
