@@ -54,7 +54,7 @@ function FreeformOptic() {
   });
 
   return (
-    <mesh ref={meshRef} geometry={geometry} scale={0.72} position={[1.3, 0, 0]}>
+    <mesh ref={meshRef} geometry={geometry} scale={0.45} position={[1.3, 0, 0]}>
       <MeshTransmissionMaterial
         ref={matRef}
         background={bgTexture}
