@@ -125,6 +125,84 @@ function Index() {
         </div>
       </section>
 
+      {/* PROCESS — dark band */}
+      <section className="bg-ink py-24 text-ink-foreground md:py-32">
+        <div className="mx-auto max-w-7xl px-6 md:px-10">
+          <p className="text-xs uppercase tracking-[0.25em] text-ink-foreground/60">
+            How it works
+          </p>
+          <h2 className="mt-4 max-w-3xl font-display text-4xl font-semibold leading-tight md:text-6xl">
+            From spec to shipped part in four steps.
+          </h2>
+          <div className="mt-16 grid gap-10 md:grid-cols-4">
+            {[
+              { k: "Brief", d: "Drop a spec, sketch or reference. Agents extract constraints automatically." },
+              { k: "Design", d: "Generative ray-tracing explores thousands of candidate prescriptions." },
+              { k: "Tolerance", d: "Monte-Carlo and stray-light analysis converge on a manufacturable design." },
+              { k: "Fabricate", d: "Routed to a qualified shop. Parts arrive measured and certified." },
+            ].map((s, i) => (
+              <div key={s.k} className="border-t border-ink-foreground/20 pt-6">
+                <div className="font-mono text-xs text-ink-foreground/50">0{i + 1}</div>
+                <h3 className="mt-3 text-xl font-semibold">{s.k}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink-foreground/70">{s.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* METRICS */}
+      <section className="bg-background py-24 md:py-32">
+        <div className="mx-auto max-w-7xl px-6 md:px-10">
+          <div className="grid gap-12 md:grid-cols-3">
+            {[
+              { n: "5 days", l: "Median design-to-prototype" },
+              { n: "λ/20", l: "Surface accuracy on freeform" },
+              { n: "200 nm – 12 µm", l: "Spectral coverage" },
+            ].map((m) => (
+              <div key={m.l}>
+                <div className="font-display text-5xl font-semibold md:text-7xl">{m.n}</div>
+                <div className="mt-3 text-sm uppercase tracking-[0.2em] text-muted-foreground">
+                  {m.l}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* TESTIMONIAL */}
+      <section className="bg-background pb-24 md:pb-32">
+        <div className="mx-auto max-w-5xl px-6 md:px-10">
+          <blockquote className="font-display text-3xl font-medium leading-snug tracking-tight md:text-5xl">
+            “Opdo gave us a manufacturable freeform prescription in under a week.
+            The traditional cycle would have been three months.”
+          </blockquote>
+          <div className="mt-8 text-sm uppercase tracking-[0.2em] text-muted-foreground">
+            Lead optical engineer · stealth imaging startup
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="bg-ink py-24 text-ink-foreground md:py-32">
+        <div className="mx-auto flex max-w-5xl flex-col items-start gap-8 px-6 md:px-10">
+          <h2 className="font-display text-4xl font-semibold leading-tight md:text-6xl">
+            Have a system that needs optics?
+          </h2>
+          <p className="max-w-2xl text-lg text-ink-foreground/70">
+            Brief our agents in minutes. Get a feasibility study, design candidates
+            and a quote — without scheduling a single intro call.
+          </p>
+          <Link
+            to="/capabilities"
+            className="rounded-full bg-ink-foreground px-6 py-3 text-sm font-medium text-ink transition-transform hover:-translate-y-0.5"
+          >
+            Start a project
+          </Link>
+        </div>
+      </section>
+
       <SiteFooter />
     </div>
   );
