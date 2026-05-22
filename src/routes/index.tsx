@@ -251,7 +251,7 @@ function Index() {
               {[
                 ["FLAG-014", "Coating ripple @ 632nm", "high"],
                 ["FLAG-021", "Ghost path, S3 → S7", "med"],
-                ["FLAG-033", "Thermal defocus +18°C", "med"],
+                ["FLAG-033", "Thermal defocus 42µm @ +18°C", "med"],
                 ["FLAG-047", "Edge thickness < spec", "low"],
                 ["FLAG-052", "Stray light, off-axis 12°", "high"],
               ].map(([id, label, sev]) => (
