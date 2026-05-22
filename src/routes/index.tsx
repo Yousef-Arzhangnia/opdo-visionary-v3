@@ -243,7 +243,7 @@ function Index() {
               optimized, manufacturing-ready design.
             </p>
             <p className="mt-6 font-display text-2xl leading-snug text-ink-foreground/90">
-              The agents propose. You decide. You stay the author.
+              The agents propose. You stay the author.
             </p>
           </div>
           <div className="md:col-span-5">
