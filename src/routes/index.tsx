@@ -249,7 +249,7 @@ function Index() {
           <div className="md:col-span-5">
             <ul className="divide-y divide-ink-foreground/10 border-y border-ink-foreground/15 font-mono text-sm">
               {[
-                ["FLAG-014", "Coating ripple @ 632nm", "high"],
+                ["FLAG-014", "Nominal MTF below spec, 0.6 field", "high"],
                 ["FLAG-021", "Ghost path, S3 → S7", "med"],
                 ["FLAG-033", "Thermal defocus 42µm @ +18°C", "med"],
                 ["FLAG-047", "Wavefront error 0.15λ over spec", "low"],
