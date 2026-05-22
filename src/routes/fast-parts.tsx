@@ -14,7 +14,7 @@ export const Route = createFileRoute("/fast-parts")({
       { property: "og:title", content: "Fast Parts — Opdo" },
       {
         property: "og:description",
-        content: "From verified design to real part — fast.",
+        content: "From verified design to real part fast.",
       },
     ],
   }),
@@ -24,7 +24,7 @@ function FastParts() {
   return (
     <PageShell
       eyebrow="Fast Parts"
-      title="From verified design to real part — fast"
+      title="From verified design to real part fast"
       intro="Digital verification tells you a design should work. Physical verification proves it. Once your design is verified and optimized in Opdo's agent space, it goes straight to prototyping as a real optical component."
     >
       <section className="mt-8">
