@@ -349,9 +349,9 @@ function Index() {
           <div className="md:col-span-5">
             <div className="rounded-sm border border-border bg-card p-6 font-mono text-xs leading-relaxed text-foreground/80">
               <pre className="whitespace-pre-wrap text-[11px]">
-{`▸ runtime ............. on-prem, private cloud, air-gapped
-▸ models .............. frontier, hosted
-▸ design data ......... never leaves your network
+{`▸ runtime ............. on-prem
+▸ models .............. frontier (API), open-weight (local)
+▸ design data ......... full control
 ▸ audit log ........... per-flag, per-decision
 ▸ integrations ........ Zemax, Code V, FRED, Tidy3D, +many 
 ▸ handoff ............. STEP, ISO 10110 PDF, ZMX, SEQ +many`}
