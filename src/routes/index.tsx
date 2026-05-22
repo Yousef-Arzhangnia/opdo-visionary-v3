@@ -350,7 +350,7 @@ function Index() {
             <div className="rounded-sm border border-border bg-card p-6 font-mono text-xs leading-relaxed text-foreground/80">
               <pre className="whitespace-pre-wrap text-[11px]">
 {`▸ runtime ............. on-prem
-▸ models .............. frontier (API), open-weight (local)
+▸ models .............. frontier(API) or self-hosted(local)
 ▸ design data ......... stays in your network
 ▸ audit log ........... per-flag, per-decision
 ▸ integrations ........ Zemax, Code V, FRED, Tidy3D, +many 
