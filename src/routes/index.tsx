@@ -115,7 +115,7 @@ function Index() {
             <div className="grid grid-cols-2 gap-px overflow-hidden rounded-sm border border-ink-foreground/15 bg-ink-foreground/5 font-mono text-xs">
               {[
                 ["60%", "of dev time spent verifying"],
-                ["8–16w", "typical optics lead time"],
+                ["8–20w", "typical optics lead time"],
                 ["1", "re-spin can sink a program"],
                 ["λ/20", "tolerance, routinely"],
               ].map(([k, v]) => (
