@@ -47,10 +47,6 @@ function FastParts() {
 
       {/* BLOCK 1 cont. — DARK: Why it's fast */}
       <section className="relative isolate overflow-hidden bg-ink py-32 text-ink-foreground md:py-40">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-ink-foreground/30 to-transparent"
-        />
         <div className="relative mx-auto max-w-7xl px-6 md:px-10">
           <div className="font-mono text-[11px] uppercase tracking-[0.3em] text-ink-foreground/50">
             01 · Speed
