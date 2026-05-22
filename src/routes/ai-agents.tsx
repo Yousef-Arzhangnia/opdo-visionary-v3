@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { PageShell } from "@/components/page-shell";
+import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
+import { WaveBackdrop } from "@/components/wave-backdrop";
 
 export const Route = createFileRoute("/ai-agents")({
   component: AiAgents,
@@ -85,103 +87,159 @@ const verifyCards = [
 
 function AiAgents() {
   return (
-    <PageShell
-      eyebrow="AI Agents"
-      title="AI agents for optical verification"
-      intro="Every optical problem is different. We configure the agent space for it. A few examples:"
-    >
-      {/* What the agents do */}
-      <section className="mt-8">
-        <h2 className="font-display text-3xl font-semibold md:text-5xl">What the agents do</h2>
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
-          {[
-            { t: "Ask Opdo", d: "Ask questions about your design in plain language and get answers grounded in its physics." },
-            { t: "Run test", d: "The agents run state-of-the-art optical tools and return clear pass/fail results." },
-            { t: "Refine setup", d: "Tune the verification to your specific problem, constraints, and tolerances." },
-            { t: "Fix errors", d: "The agents suggest concrete corrections. Nothing changes until you approve it." },
-          ].map((c) => (
-            <div key={c.t} className="rounded-2xl border border-border bg-card p-8">
-              <h3 className="font-display text-2xl font-semibold">{c.t}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{c.d}</p>
-            </div>
-          ))}
+    <div className="min-h-screen bg-background">
+      <SiteHeader variant="dark" />
+
+      {/* BLOCK 1 — DARK: Hero */}
+      <section className="relative isolate overflow-hidden bg-ink pb-24 pt-40 text-ink-foreground md:pt-48">
+        <WaveBackdrop variant="spectrum" tint="dark" />
+        <div className="relative mx-auto max-w-7xl px-6 md:px-10">
+          <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-ink-foreground/50">
+            AI Agents
+          </p>
+          <h1 className="mt-6 max-w-4xl font-display text-5xl font-semibold leading-[1.02] tracking-tight md:text-7xl">
+            AI agents for optical verification
+          </h1>
+          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-ink-foreground/75">
+            Every optical problem is different. We configure the agent space for it. A few examples:
+          </p>
         </div>
       </section>
 
-      {/* How a run works */}
-      <section className="mt-24">
-        <h2 className="font-display text-3xl font-semibold md:text-5xl">How a verification run works</h2>
-        <p className="mt-6 max-w-3xl text-lg leading-relaxed text-foreground/80">
-          Nothing is a black box. Each run returns a sequence you review and approve at every step.
-        </p>
-        <div className="mt-10 grid gap-8 md:grid-cols-3">
-          {[
-            { k: "01", t: "Flagged issues", d: "Every issue the agents find, where it is, how severe it is, and the physics reason behind it." },
-            { k: "02", t: "Suggested edits", d: "Concrete fixes you accept or reject. Nothing is applied to your design without your approval." },
-            { k: "03", t: "Optimized manufacturing design", d: "Once you have approved the changes, a manufacturing-ready design — the milestone that connects verification to a real part." },
-          ].map((s) => (
-            <div key={s.k} className="border-t border-border pt-6">
-              <div className="font-mono text-xs text-muted-foreground">{s.k}</div>
-              <h3 className="mt-2 text-xl font-semibold">{s.t}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.d}</p>
-            </div>
-          ))}
-        </div>
-        <p className="mt-10 font-display text-2xl leading-snug text-foreground/90 md:text-3xl">
-          The agents propose. You decide. You remain the engineer of record.
-        </p>
-      </section>
-
-      {/* Gallery */}
-      <section className="mt-24">
-        <h2 className="font-display text-3xl font-semibold md:text-5xl">What the agents verify</h2>
-        <p className="mt-6 max-w-3xl text-lg leading-relaxed text-foreground/80">
-          Every optical problem is different. We configure the agent space for yours. A few examples:
-        </p>
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
-          {verifyCards.map((c) => (
-            <div key={c.t} className="rounded-2xl border border-border bg-card p-8">
-              <h3 className="font-display text-2xl font-semibold">{c.t}</h3>
-              <dl className="mt-5 space-y-4 text-sm leading-relaxed">
-                <div>
-                  <dt className="font-mono text-xs uppercase tracking-wider text-muted-foreground">You bring</dt>
-                  <dd className="mt-1 text-foreground/85">{c.bring}</dd>
-                </div>
-                <div>
-                  <dt className="font-mono text-xs uppercase tracking-wider text-muted-foreground">The agents check</dt>
-                  <dd className="mt-1 text-foreground/85">{c.check}</dd>
-                </div>
-                <div>
-                  <dt className="font-mono text-xs uppercase tracking-wider text-muted-foreground">You get back</dt>
-                  <dd className="mt-1 text-foreground/85">{c.get}</dd>
-                </div>
-              </dl>
-            </div>
-          ))}
+      {/* BLOCK 1 cont. — DARK: What the agents do */}
+      <section className="relative isolate overflow-hidden bg-ink py-32 text-ink-foreground md:py-40">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-ink-foreground/30 to-transparent"
+        />
+        <WaveBackdrop variant="ridge" tint="dark" />
+        <div className="relative mx-auto max-w-7xl px-6 md:px-10">
+          <div className="font-mono text-[11px] uppercase tracking-[0.3em] text-ink-foreground/50">
+            01 · What the agents do
+          </div>
+          <h2 className="mt-6 font-display text-5xl font-semibold leading-[1.02] tracking-tight md:text-7xl">
+            What the agents do
+          </h2>
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            {[
+              { t: "Ask Opdo", d: "Ask questions about your design in plain language and get answers grounded in its physics." },
+              { t: "Run test", d: "The agents run state-of-the-art optical tools and return clear pass/fail results." },
+              { t: "Refine setup", d: "Tune the verification to your specific problem, constraints, and tolerances." },
+              { t: "Fix errors", d: "The agents suggest concrete corrections. Nothing changes until you approve it." },
+            ].map((c) => (
+              <div key={c.t} className="rounded-2xl border border-ink-foreground/15 bg-ink-foreground/5 p-8 backdrop-blur-sm">
+                <h3 className="font-display text-2xl font-semibold">{c.t}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-ink-foreground/70">{c.d}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Runs on your infra */}
-      <section className="mt-24 rounded-2xl border border-border bg-card p-10">
-        <h2 className="font-display text-3xl font-semibold md:text-4xl">Runs on your infrastructure</h2>
-        <p className="mt-4 max-w-3xl text-base leading-relaxed text-foreground/80">
-          The agent space can be deployed locally. Your design data and IP stay on your network.
-          We configure it for you; you run it.
-        </p>
-      </section>
-
-      {/* Closing CTA */}
-      <section className="mt-24">
-        <h2 className="font-display text-3xl font-semibold md:text-5xl">See if Opdo fits your problem</h2>
-        <div className="mt-8">
-          <Link
-            to="/contact"
-            className="inline-block rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition-transform hover:-translate-y-0.5"
-          >
-            Contact us
-          </Link>
+      {/* BLOCK 2 — LIGHT: How a verification run works */}
+      <section className="relative isolate overflow-hidden bg-background py-32 md:py-40">
+        <WaveBackdrop variant="mirror" tint="light" />
+        <div className="relative mx-auto max-w-7xl px-6 md:px-10">
+          <div className="font-mono text-[11px] uppercase tracking-[0.3em] text-muted-foreground">
+            02 · How a run works
+          </div>
+          <h2 className="mt-6 font-display text-5xl font-semibold leading-[1.02] tracking-tight md:text-7xl">
+            How a verification run works
+          </h2>
+          <p className="mt-8 max-w-3xl text-lg leading-relaxed text-foreground/80">
+            Nothing is a black box. Each run returns a sequence you review and approve at every step.
+          </p>
+          <div className="mt-12 grid gap-8 md:grid-cols-3">
+            {[
+              { k: "01", t: "Flagged issues", d: "Every issue the agents find, where it is, how severe it is, and the physics reason behind it." },
+              { k: "02", t: "Suggested edits", d: "Concrete fixes you accept or reject. Nothing is applied to your design without your approval." },
+              { k: "03", t: "Optimized manufacturing design", d: "Once you have approved the changes, a manufacturing-ready design — the milestone that connects verification to a real part." },
+            ].map((s) => (
+              <div key={s.k} className="border-t border-border pt-6">
+                <div className="font-mono text-xs text-muted-foreground">{s.k}</div>
+                <h3 className="mt-2 text-xl font-semibold">{s.t}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.d}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-12 font-display text-2xl leading-snug text-foreground/90 md:text-3xl">
+            The agents propose. You decide. You remain the engineer of record.
+          </p>
         </div>
       </section>
-    </PageShell>
+
+      {/* BLOCK 3 — DARK: What the agents verify */}
+      <section className="relative isolate overflow-hidden bg-ink py-32 text-ink-foreground md:py-40">
+        <WaveBackdrop variant="ghost" tint="dark" />
+        <div className="relative mx-auto max-w-7xl px-6 md:px-10">
+          <div className="font-mono text-[11px] uppercase tracking-[0.3em] text-ink-foreground/50">
+            03 · What the agents verify
+          </div>
+          <h2 className="mt-6 font-display text-5xl font-semibold leading-[1.02] tracking-tight md:text-7xl">
+            What the agents verify
+          </h2>
+          <p className="mt-8 max-w-3xl text-lg leading-relaxed text-ink-foreground/75">
+            Every optical problem is different. We configure the agent space for yours. A few examples:
+          </p>
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            {verifyCards.map((c) => (
+              <div key={c.t} className="rounded-2xl border border-ink-foreground/15 bg-ink-foreground/5 p-8 backdrop-blur-sm">
+                <h3 className="font-display text-2xl font-semibold">{c.t}</h3>
+                <dl className="mt-5 space-y-4 text-sm leading-relaxed">
+                  <div>
+                    <dt className="font-mono text-xs uppercase tracking-wider text-ink-foreground/50">You bring</dt>
+                    <dd className="mt-1 text-ink-foreground/85">{c.bring}</dd>
+                  </div>
+                  <div>
+                    <dt className="font-mono text-xs uppercase tracking-wider text-ink-foreground/50">The agents check</dt>
+                    <dd className="mt-1 text-ink-foreground/85">{c.check}</dd>
+                  </div>
+                  <div>
+                    <dt className="font-mono text-xs uppercase tracking-wider text-ink-foreground/50">You get back</dt>
+                    <dd className="mt-1 text-ink-foreground/85">{c.get}</dd>
+                  </div>
+                </dl>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* BLOCK 4 — LIGHT: Runs on your infra + CTA */}
+      <section className="relative isolate overflow-hidden bg-background py-32 md:py-40">
+        <WaveBackdrop variant="edge" tint="light" />
+        <div className="relative mx-auto max-w-7xl px-6 md:px-10">
+          <div className="font-mono text-[11px] uppercase tracking-[0.3em] text-muted-foreground">
+            04 · Runs on your infrastructure
+          </div>
+          <h2 className="mt-6 font-display text-4xl font-semibold leading-[1.02] tracking-tight md:text-6xl">
+            Runs on your infrastructure
+          </h2>
+          <p className="mt-8 max-w-3xl text-lg leading-relaxed text-foreground/80">
+            The agent space can be deployed locally. Your design data and IP stay on your network.
+            We configure it for you; you run it.
+          </p>
+        </div>
+      </section>
+
+      <section className="relative isolate overflow-hidden bg-background pb-32 md:pb-40">
+        <WaveBackdrop variant="tilt" tint="light" />
+        <div className="relative mx-auto max-w-7xl px-6 md:px-10">
+          <h2 className="font-display text-5xl font-semibold leading-[1.02] tracking-tight md:text-7xl">
+            See if Opdo fits your problem
+          </h2>
+          <div className="mt-10">
+            <Link
+              to="/contact"
+              className="inline-block rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition-transform hover:-translate-y-0.5"
+            >
+              Contact us
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <SiteFooter />
+    </div>
   );
 }
