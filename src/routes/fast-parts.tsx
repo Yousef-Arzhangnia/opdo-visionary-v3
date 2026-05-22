@@ -41,7 +41,7 @@ function FastParts() {
         <h2 className="font-display text-3xl font-semibold md:text-5xl">The verification loop, closed</h2>
         <p className="mt-6 max-w-3xl text-lg leading-relaxed text-foreground/80">
           Verify in software. Confirm in hardware. Iterate. Because each loop is fast, you run
-          more of them — and more iterations means a better optical part.
+          more of them. And more iterations means better optics.
         </p>
       </section>
 
