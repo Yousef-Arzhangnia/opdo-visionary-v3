@@ -115,28 +115,17 @@ function Index() {
             <div className="grid grid-cols-2 gap-px overflow-hidden rounded-sm border border-ink-foreground/15 bg-ink-foreground/5 font-mono text-xs">
               {[
                 ["60%", "of dev time spent verifying"],
-                [
-                  "The agents verify and refine your design and make it manufacturing-ready.",
-                  "",
-                ],
+                ["8–16w", "typical optics lead time"],
                 ["1", "re-spin can sink a program"],
                 ["λ/20", "tolerance, routinely"],
               ].map(([k, v]) => (
-                <div key={k} className={v === "" ? "col-span-2 bg-ink p-5" : "bg-ink p-5"}>
-                  <div
-                    className={
-                      v === ""
-                        ? "text-lg font-medium leading-snug text-ink-foreground/90"
-                        : "font-display text-3xl font-semibold tracking-tight text-ink-foreground md:text-4xl"
-                    }
-                  >
+                <div key={k} className="bg-ink p-5">
+                  <div className="font-display text-3xl font-semibold tracking-tight text-ink-foreground md:text-4xl">
                     {k}
                   </div>
-                  {v !== "" && (
-                    <div className="mt-2 text-[11px] uppercase tracking-[0.18em] text-ink-foreground/55">
-                      {v}
-                    </div>
-                  )}
+                  <div className="mt-2 text-[11px] uppercase tracking-[0.18em] text-ink-foreground/55">
+                    {v}
+                  </div>
                 </div>
               ))}
             </div>
