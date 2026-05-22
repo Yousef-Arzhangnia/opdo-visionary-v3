@@ -88,7 +88,7 @@ function AiAgents() {
     <PageShell
       eyebrow="AI Agents"
       title="AI agents for optical verification"
-      intro="Opdo delivers a configured AI agent space — built by us, set up around your specific optical problem. The agents take a design you have already thought through and verify it: checking it against your spec, testing it with state-of-the-art optical tools, and suggesting improvements you approve. They do not generate designs from scratch. They make the design you bring better, faster, and ready to manufacture."
+      intro="Every optical problem is different. We configure the agent space for it. A few examples:"
     >
       {/* What the agents do */}
       <section className="mt-8">
