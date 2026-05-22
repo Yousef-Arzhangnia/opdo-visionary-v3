@@ -28,14 +28,13 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <div className="min-h-screen bg-background">
+      <SiteHeader variant="dark" />
       {/* =========================================================
           BLOCK 1 — DARK PAIR: Hero + Bottleneck
          ========================================================= */}
 
       {/* HERO — dark */}
       <section className="relative isolate min-h-screen overflow-hidden bg-ink text-ink-foreground">
-        <SiteHeader variant="dark" />
-
         {/* Full-screen wave structure */}
         <img
           src={heroWaves}
@@ -90,7 +89,6 @@ function Index() {
 
       {/* Optics is the bottleneck — DARK (continues the hero block) */}
       <section className="relative isolate overflow-hidden bg-ink py-32 text-ink-foreground md:py-40">
-        <WaveBackdrop variant="ridge" tint="dark" />
         <div
           aria-hidden
           className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-ink-foreground/30 to-transparent"
