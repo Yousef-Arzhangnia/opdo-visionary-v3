@@ -217,10 +217,7 @@ function Index() {
           </div>
 
           <p className="mt-16 max-w-3xl font-display text-2xl leading-snug text-foreground/90 md:text-3xl">
-            The agents verify and refine.{" "}
-            <span className="text-foreground">
-              You bring the design; they make it manufacturing-ready.
-            </span>
+            The agents verify and refine your design and make it manufacturing-ready.
           </p>
         </div>
       </section>
