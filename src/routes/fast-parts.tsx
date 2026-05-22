@@ -51,7 +51,7 @@ function FastParts() {
           aria-hidden
           className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-ink-foreground/30 to-transparent"
         />
-        <WaveBackdrop variant="ridge" tint="dark" />
+        <div className="relative mx-auto max-w-7xl px-6 md:px-10">
           <div className="font-mono text-[11px] uppercase tracking-[0.3em] text-ink-foreground/50">
             01 · Why it's fast
           </div>
