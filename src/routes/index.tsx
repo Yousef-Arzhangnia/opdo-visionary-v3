@@ -239,8 +239,8 @@ function Index() {
             <p className="mt-10 max-w-xl text-lg leading-relaxed text-ink-foreground/75">
               Every verification run gives you a sequence you review and approve. A
               flagged-issue list, its location, its severity, and the physics reason behind
-              it. Suggested edits you accept or reject. And once you have approved them, an
-              optimized, manufacturing-ready design.
+              it. Edits are suggested that you can accept or reject. Once everything is
+              approved, you get an optimized, manufacturing-ready design.
             </p>
             <p className="mt-6 font-display text-2xl leading-snug text-ink-foreground/90">
               The agents propose. You stay the author.
