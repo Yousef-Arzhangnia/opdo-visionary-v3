@@ -53,7 +53,7 @@ function FastParts() {
         />
         <div className="relative mx-auto max-w-7xl px-6 md:px-10">
           <div className="font-mono text-[11px] uppercase tracking-[0.3em] text-ink-foreground/50">
-            01 · Why it's fast
+            01 · Speed
           </div>
           <h2 className="mt-6 font-display text-5xl font-semibold leading-[1.02] tracking-tight md:text-7xl">
             Why it's fast
@@ -73,7 +73,7 @@ function FastParts() {
         <WaveBackdrop variant="mirror" tint="light" />
         <div className="relative mx-auto max-w-7xl px-6 md:px-10">
           <div className="font-mono text-[11px] uppercase tracking-[0.3em] text-muted-foreground">
-            02 · The loop, closed
+            02 · Moat
           </div>
           <h2 className="mt-6 font-display text-5xl font-semibold leading-[1.02] tracking-tight md:text-7xl">
             The verification loop, closed
@@ -94,7 +94,7 @@ function FastParts() {
         <WaveBackdrop variant="tilt" tint="light" />
         <div className="relative mx-auto max-w-7xl px-6 md:px-10">
           <div className="font-mono text-[11px] uppercase tracking-[0.3em] text-muted-foreground">
-            03 · Production
+            03 · Promise
           </div>
           <h2 className="mt-6 font-display text-5xl font-semibold leading-[1.02] tracking-tight md:text-7xl">
             Production specifications
