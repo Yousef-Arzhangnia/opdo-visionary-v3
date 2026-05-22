@@ -152,7 +152,7 @@ function Index() {
             </h2>
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-foreground/80">
               More than 60% of development time, paid in fabrication lead times and
-              simulation cycles. We shift verification earlier — with agentic AI and local,
+              simulation cycles. We shift verification earlier with agentic AI and local,
               fast prototyping.
             </p>
           </div>
