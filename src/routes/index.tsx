@@ -253,7 +253,7 @@ function Index() {
                 ["FLAG-021", "Ghost S3 → S7 near focal plane", "med"],
                 ["FLAG-033", "Thermal defocus 38µm exceeds DOF", "med"],
                 ["FLAG-047", "Stray light past baffle, 12° field", "low"],
-                ["FLAG-052", "Stray light path, off-axis 12°", "high"],
+                ["FLAG-052", "Mount stress: 0.12λ astigmatism", "high"],
               ].map(([id, label, sev]) => (
                 <li key={id} className="flex items-center justify-between py-4">
                   <div className="flex items-center gap-4">
