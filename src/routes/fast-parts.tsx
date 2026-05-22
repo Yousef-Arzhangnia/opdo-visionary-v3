@@ -30,8 +30,7 @@ function FastParts() {
       <section className="mt-8">
         <h2 className="font-display text-3xl font-semibold md:text-5xl">Why it's fast</h2>
         <p className="mt-6 max-w-3xl text-lg leading-relaxed text-foreground/80">
-          The design arrives already verified and manufacturing-ready. There is no quoting
-          back-and-forth and no late-stage redesign — prototyping starts immediately.
+          Your design is verified by AI and checked for manufacturability. Quoting is almost instant so your prototyping can start immediately.
         </p>
         <p className="mt-4 max-w-3xl text-sm italic text-muted-foreground">
           [Prototype turnaround: prototypes in [X] weeks, not months.]
