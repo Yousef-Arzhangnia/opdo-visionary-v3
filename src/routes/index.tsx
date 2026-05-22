@@ -112,22 +112,38 @@ function Index() {
             </p>
           </div>
           <div className="md:col-span-5 md:pl-8">
-            <div className="grid grid-cols-2 gap-px overflow-hidden rounded-sm border border-ink-foreground/15 bg-ink-foreground/5 font-mono text-xs">
-              {[
-                ["60%", "of dev time spent verifying"],
-                ["8–16w", "typical optics lead time"],
-                ["1", "re-spin can sink a program"],
-                ["λ/20", "tolerance, routinely"],
-              ].map(([k, v]) => (
-                <div key={k} className="bg-ink p-5">
-                  <div className="font-display text-3xl font-semibold tracking-tight text-ink-foreground md:text-4xl">
-                    {k}
-                  </div>
-                  <div className="mt-2 text-[11px] uppercase tracking-[0.18em] text-ink-foreground/55">
-                    {v}
-                  </div>
+            <div className="grid gap-px overflow-hidden rounded-sm border border-ink-foreground/15 bg-ink-foreground/5 font-mono text-xs md:grid-cols-2">
+              <div className="bg-ink p-5">
+                <div className="font-display text-3xl font-semibold tracking-tight text-ink-foreground md:text-4xl">
+                  60%
                 </div>
-              ))}
+                <div className="mt-2 text-[11px] uppercase tracking-[0.18em] text-ink-foreground/55">
+                  of dev time spent verifying
+                </div>
+              </div>
+              <div className="bg-ink p-5">
+                <div className="font-display text-3xl font-semibold tracking-tight text-ink-foreground md:text-4xl">
+                  1
+                </div>
+                <div className="mt-2 text-[11px] uppercase tracking-[0.18em] text-ink-foreground/55">
+                  re-spin can sink a program
+                </div>
+              </div>
+              <div className="bg-ink p-5 md:col-span-2">
+                <div className="text-sm leading-relaxed text-ink-foreground/80">
+                  More than 60% of development time, paid in fabrication lead times and
+                  simulation cycles. We shift verification earlier with agentic AI and
+                  local, fast prototyping.
+                </div>
+              </div>
+              <div className="bg-ink p-5 md:col-span-2">
+                <div className="font-display text-3xl font-semibold tracking-tight text-ink-foreground md:text-4xl">
+                  λ/20
+                </div>
+                <div className="mt-2 text-[11px] uppercase tracking-[0.18em] text-ink-foreground/55">
+                  tolerance, routinely
+                </div>
+              </div>
             </div>
           </div>
         </div>
