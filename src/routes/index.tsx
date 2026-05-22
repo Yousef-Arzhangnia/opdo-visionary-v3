@@ -348,13 +348,9 @@ function Index() {
           </div>
           <div className="md:col-span-5">
             <div className="rounded-sm border border-border bg-card p-6 font-mono text-xs leading-relaxed text-foreground/80">
-              <div className="flex items-center justify-between border-b border-border pb-3 text-muted-foreground">
-                <span>opdo · deployment</span>
-                <span>local · air-gapped</span>
-              </div>
-              <pre className="mt-3 whitespace-pre-wrap text-[11px]">
-{`▸ runtime ............. on-prem / private cloud
-▸ models .............. Claude Opus, GPT-5, Gemini Pro
+              <pre className="whitespace-pre-wrap text-[11px]">
+{`▸ runtime ............. on-prem, private cloud, air-gapped
+▸ models .............. frontier, hosted
 ▸ design data ......... never leaves your network
 ▸ audit log ........... per-flag, per-decision
 ▸ integrations ........ Zemax, Code V, FRED, Tidy3D, +many 
