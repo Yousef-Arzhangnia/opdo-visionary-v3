@@ -25,7 +25,7 @@ function FastParts() {
     <PageShell
       eyebrow="Fast Parts"
       title="From verified design to real part fast"
-      intro="Digital verification tells you a design should work. Physical verification proves it. Once your design is verified and optimized in Opdo's agent space, it goes straight to prototyping as a real optical component."
+      intro="Digital verification tells you a design should work. Physical verification proves it. Once your design is verified and optimized in Opdo's agent space, you can bring it straight to prototyping as a real optical component."
     >
       <section className="mt-8">
         <h2 className="font-display text-3xl font-semibold md:text-5xl">Why it's fast</h2>
