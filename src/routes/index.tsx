@@ -295,8 +295,8 @@ function Index() {
             </h2>
             <p className="mt-8 text-lg leading-relaxed text-ink-foreground/75">
               Every optical problem is different, so Opdo does not ship a generic tool. We
-              configure an AI agent space around your specific design challenge — set up
-              with real optical process physics, not generic AI.
+              configure an AI agent space around your specific design challenge set up
+              with the required codes and workflows.
             </p>
           </div>
 
