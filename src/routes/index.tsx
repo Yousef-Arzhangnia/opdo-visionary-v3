@@ -251,7 +251,7 @@ function Index() {
               {[
                 ["FLAG-014", "Nominal MTF below spec, 0.6 field", "high"],
                 ["FLAG-021", "Ghost S3 → S7 near focal plane", "med"],
-                ["FLAG-033", "Thermal defocus 42µm @ +18°C", "med"],
+                ["FLAG-033", "Thermal defocus 38µm exceeds DOF", "med"],
                 ["FLAG-047", "Wavefront error 0.15λ over spec", "low"],
                 ["FLAG-052", "Stray light path, off-axis 12°", "high"],
               ].map(([id, label, sev]) => (
