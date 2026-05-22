@@ -92,7 +92,6 @@ function AiAgents() {
 
       {/* BLOCK 1 — DARK: Hero */}
       <section className="relative isolate overflow-hidden bg-ink pb-24 pt-40 text-ink-foreground md:pt-48">
-        <WaveBackdrop variant="spectrum" tint="dark" />
         <div className="relative mx-auto max-w-7xl px-6 md:px-10">
           <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-ink-foreground/50">
             AI Agents
