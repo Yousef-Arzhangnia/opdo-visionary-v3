@@ -351,7 +351,7 @@ function Index() {
               <pre className="whitespace-pre-wrap text-[11px]">
 {`▸ runtime ............. on-prem
 ▸ models .............. frontier (API), open-weight (local)
-▸ design data ......... full control
+▸ design data ......... stays in your network
 ▸ audit log ........... per-flag, per-decision
 ▸ integrations ........ Zemax, Code V, FRED, Tidy3D, +many 
 ▸ handoff ............. STEP, ISO 10110 PDF, ZMX, SEQ +many`}
