@@ -171,7 +171,7 @@ function Index() {
               03 · How it works
             </div>
             <h2 className="mt-6 font-display text-5xl font-semibold leading-[1.02] tracking-tight md:text-7xl">
-              Verify twice — first in software, then in hardware.
+              Verify twice. First digitally, then in reality.
             </h2>
             <p className="mt-8 text-lg leading-relaxed text-foreground/80">
               Opdo verifies your optical design in two connected stages.
