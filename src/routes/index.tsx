@@ -354,11 +354,11 @@ function Index() {
               </div>
               <pre className="mt-3 whitespace-pre-wrap text-[11px]">
 {`▸ runtime ............. on-prem / private cloud
-▸ models .............. local weights, no egress
+▸ models .............. Claude Opus, GPT-5, Gemini Pro
 ▸ design data ......... never leaves your network
 ▸ audit log ........... per-flag, per-decision
-▸ integrations ........ Zemax · Code V · CODE V LDM
-▸ handoff ............. STEP · IGES · Zemax .zar`}
+▸ integrations ........ Zemax, Code V, FRED, Tidy3D, +many 
+▸ handoff ............. STEP, ISO 10110 PDF, ZMX, SEQ +many`}
               </pre>
             </div>
           </div>
