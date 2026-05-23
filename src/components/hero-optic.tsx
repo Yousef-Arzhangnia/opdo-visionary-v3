@@ -3,8 +3,9 @@ import { Environment, MeshTransmissionMaterial } from "@react-three/drei";
 import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
 import heroWaves from "@/assets/hero-waves.jpg";
+import { useIsMobile } from "@/hooks/use-mobile";
 
-function FreeformOptic() {
+function FreeformOptic({ isMobile }: { isMobile: boolean }) {
   const meshRef = useRef<THREE.Mesh>(null!);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const matRef = useRef<any>(null!);
@@ -54,7 +55,12 @@ function FreeformOptic() {
   });
 
   return (
-    <mesh ref={meshRef} geometry={geometry} scale={0.45} position={[1.3, 0, 0]}>
+    <mesh
+      ref={meshRef}
+      geometry={geometry}
+      scale={isMobile ? 0.7 : 0.45}
+      position={isMobile ? [0, -1.1, 0] : [1.3, 0, 0]}
+    >
       <MeshTransmissionMaterial
         ref={matRef}
         background={bgTexture}
@@ -83,13 +89,14 @@ function FreeformOptic() {
 
 export function HeroOptic() {
   const [mounted, setMounted] = useState(false);
+  const isMobile = useIsMobile();
   useEffect(() => setMounted(true), []);
   if (!mounted) return null;
 
   return (
     <div className="pointer-events-none absolute inset-0">
       <Canvas
-        camera={{ position: [0, 0, 4], fov: 38 }}
+        camera={{ position: [0, 0, 4], fov: isMobile ? 50 : 38 }}
         dpr={[1, 2]}
         gl={{ antialias: true, alpha: true }}
       >
@@ -99,7 +106,7 @@ export function HeroOptic() {
           <directionalLight position={[-3, -2, 2]} intensity={1.2} color="#ffffff" />
           <directionalLight position={[0, 4, -2]} intensity={1.5} color="#bcd4ff" />
           <Environment preset="studio" environmentIntensity={1.2} />
-          <FreeformOptic />
+          <FreeformOptic isMobile={isMobile} />
         </Suspense>
       </Canvas>
     </div>
