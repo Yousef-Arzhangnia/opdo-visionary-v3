@@ -12,7 +12,7 @@ function FreeformOptic({ isMobile }: { isMobile: boolean }) {
   const bgTexture = useLoader(THREE.TextureLoader, heroWaves);
 
   const geometry = useMemo(() => {
-    const geo = new THREE.SphereGeometry(1.35, 256, 256);
+    const geo = new THREE.SphereGeometry(1.35, 96, 96);
     const pos = geo.attributes.position as THREE.BufferAttribute;
 
     for (let i = 0; i < pos.count; i++) {
@@ -80,8 +80,8 @@ function FreeformOptic({ isMobile }: { isMobile: boolean }) {
         attenuationColor="#ffffff"
         color="#ffffff"
         backside
-        samples={12}
-        resolution={1024}
+        samples={6}
+        resolution={512}
       />
     </mesh>
   );
@@ -97,7 +97,7 @@ export function HeroOptic() {
     <div className="pointer-events-none absolute inset-0">
       <Canvas
         camera={{ position: [0, 0, 4], fov: isMobile ? 50 : 38 }}
-        dpr={[1, 2]}
+        dpr={[1, 1.5]}
         gl={{ antialias: true, alpha: true }}
       >
         <Suspense fallback={null}>
