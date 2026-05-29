@@ -12,7 +12,8 @@ function FreeformOptic({ isMobile }: { isMobile: boolean }) {
   const bgTexture = useLoader(THREE.TextureLoader, heroWaves);
 
   const geometry = useMemo(() => {
-    const geo = new THREE.SphereGeometry(1.35, 96, 96);
+    const segments = isMobile ? 48 : 64;
+    const geo = new THREE.SphereGeometry(1.35, segments, segments);
     const pos = geo.attributes.position as THREE.BufferAttribute;
 
     for (let i = 0; i < pos.count; i++) {
@@ -36,7 +37,7 @@ function FreeformOptic({ isMobile }: { isMobile: boolean }) {
     geo.computeBoundingSphere();
 
     return geo;
-  }, []);
+  }, [isMobile]);
 
   useFrame((state) => {
     const t = state.clock.elapsedTime;
@@ -65,23 +66,22 @@ function FreeformOptic({ isMobile }: { isMobile: boolean }) {
         ref={matRef}
         background={bgTexture}
         transmission={1}
-        thickness={0.35}
+        thickness={0.1}
         roughness={0.0}
-        ior={1.5}
-        reflectivity={1}
-        chromaticAberration={0.04}
-        anisotropy={0.02}
+        ior={1.3}
+        reflectivity={.6}
+        chromaticAberration={isMobile ? 0.02 : 0.04}
+        anisotropy={0.1}
         distortion={0.08}
         distortionScale={0.15}
-        temporalDistortion={0.01}
-        clearcoat={1}
+        temporalDistortion={.1}
+        clearcoat={0}
         clearcoatRoughness={0}
         attenuationDistance={5}
         attenuationColor="#ffffff"
         color="#ffffff"
-        backside
-        samples={6}
-        resolution={512}
+        samples={1}
+        resolution={isMobile ? 128 : 256}
       />
     </mesh>
   );
@@ -97,8 +97,9 @@ export function HeroOptic() {
     <div className="pointer-events-none absolute inset-0">
       <Canvas
         camera={{ position: [0, 0, 4], fov: isMobile ? 50 : 38 }}
-        dpr={[1, 1.5]}
-        gl={{ antialias: true, alpha: true }}
+        dpr={[1, 1]}
+        gl={{ antialias: false, alpha: true, powerPreference: "high-performance" }}
+        performance={{ min: 0.5 }}
       >
         <Suspense fallback={null}>
           <ambientLight intensity={0.4} />
